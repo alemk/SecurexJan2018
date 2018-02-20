@@ -34,7 +34,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/books/add">Add Book</a></li>
                     <li><a href="/books/list">Show Books</a></li>
-                    <li><a href="/login">Login</a></li>
+                    <li><a th:if="#{authentication.expression('isAnonymous()')}" href="/login">Login</a></li>
+                    <li><a th:if="#{authentication.expression('isAuthenticated()')}" href="/logout">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -43,7 +44,7 @@
 
         <div class="starter-template">
             <h1>Securex</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+            <p class="lead">Use this document as a way to quickly start any new project.<br/> All you get is this text and a mostly barebones HTML document.</p>
         </div>
 
     </div><!-- /.container -->
