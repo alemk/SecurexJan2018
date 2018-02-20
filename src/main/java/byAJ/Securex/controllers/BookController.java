@@ -43,6 +43,6 @@ public class BookController {
     @RequestMapping("/delete/{id}")
     public String deleteBook(@PathVariable("id")int bookid){
         bookRepository.delete(new Long(bookid));
-        return "listbooks";
+        return "redirect:/books/list";
     }
 }
